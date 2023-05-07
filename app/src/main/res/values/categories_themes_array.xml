@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Artisan</item>
+        <item>Arts/Exhibits</item>
+        <item>Camp</item>
+        <itme>Celebrations/Holiday</itme>
+        <item>Charity/Cause</item>
+        <item>Comedy</item>
+        <item>Consumer Show/Convention</item>
+        <item>Cultural</item>
+        <item>Cycling</item>
+        <item>Dance</item>
+        <item>Environmental</item>
+        <item>Family/Children</item>
+        <item>Film</item>
+        <item>History</item>
+        <item>Indigenous</item>
+        <item>LGBTQ2S+</item>
+        <item>Literary</item>
+        <item>Live Performances</item>
+        <item>Museum</item>
+        <item>Music</item>
+        <item>Nightlife</item>
+        <item>Parade</item>
+        <item>Public Square</item>
+        <item>Running</item>
+        <item>Seminars/Workshops</item>
+        <item>Sports</item>
+        <item>Street Festival</item>
+        <item>Talks</item>
+        <item>Theatre</item>
+        <item>Tour</item>
+        <item>Trivia</item>
+        <item>Virtual/Online Event</item>
+        <item>Walking</item>
+    </string-array>
+
+    <string-array name="themes">
+        <item>Black History Month</item>
+        <item>Canada Day</item>
+        <item>Chinese New Year</item>
+        <item>Cultural Hotspot Program</item>
+        <item>Easter</item>
+        <item>Family Day</item>
+        <item>Father\'s Day</item>
+        <item>Halloween</item>
+        <item>Holiday Events</item>
+        <item>March Break</item>
+        <item>Mother\'s Day</item>
+        <item>New Year</item>
+        <item>Ravine Days</item>
+        <item>Remembrance Day</item>
+        <item>St.Patrick\'s Day</item>
+        <item>Thanksgiving</item>
+        <item>Valentine\'s Day</item>
+        <item>Victoria Day</item>
+    </string-array>
+</resources>
