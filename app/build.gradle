@@ -52,4 +52,17 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation platform('com.google.firebase:firebase-bom:31.5.0')
 
+    //이거 내가 올린 블로그에서 사용하는거 일단 다 가지구 왔음
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+
 }
