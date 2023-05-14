@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "870318489114",
+    "project_id": "atlantean-glyph-386017",
+    "storage_bucket": "atlantean-glyph-386017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870318489114:android:f6c739a8be594d5f26dba3",
+        "android_client_info": {
+          "package_name": "com.toronto.festivals.jk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870318489114-shd2ek01bambn59bjcdaoe5s89a2j9t1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.toronto.festivals.jk",
+            "certificate_hash": "69a09ed6031ac3377227ce3b545b66c708fad517"
+          }
+        },
+        {
+          "client_id": "870318489114-tjscu3t6se346d05usuotfjpiagii60s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMgUny-E1btkWK8HcSu_pmHgpsJ2WEyUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870318489114-tjscu3t6se346d05usuotfjpiagii60s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
