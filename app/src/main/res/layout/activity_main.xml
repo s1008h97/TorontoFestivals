@@ -45,6 +45,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="main"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tabMap"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,6 +58,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="map"
+        android:textColor="@color/colorE0E0E0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tabMain" />

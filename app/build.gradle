@@ -50,7 +50,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+
+
+    //firebase
     implementation platform('com.google.firebase:firebase-bom:31.5.0')
+
+    //google map
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
 
     //이거 내가 올린 블로그에서 사용하는거 일단 다 가지구 왔음
     //gson

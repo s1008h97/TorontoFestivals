@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var pagerAdapter: PagerAdapter
 
-    var mapFragment: MapFragment? = null
     var festivalsFragment: FestivalsFragment? = null
+    var mapFragment: MapFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +35,9 @@ class MainActivity : AppCompatActivity() {
         binding.viewPager.adapter = pagerAdapter
 
         pagerAdapter.startUpdate(binding.viewPager)
-        mapFragment = pagerAdapter.instantiateItem(binding.viewPager, 0) as MapFragment
-        festivalsFragment = pagerAdapter.instantiateItem(binding.viewPager, 1) as FestivalsFragment
+        festivalsFragment = pagerAdapter.instantiateItem(binding.viewPager, 0) as FestivalsFragment
+        mapFragment = pagerAdapter.instantiateItem(binding.viewPager, 1) as MapFragment
+
         binding.viewPager.addOnPageChangeListener(mOnPageChangeListener)
 
         binding.tabMain.setOnClickListener(object : OnSingleClickListener() {
@@ -55,9 +56,9 @@ class MainActivity : AppCompatActivity() {
         FragmentStatePagerAdapter(fm, behavior) {
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> MapFragment()
-                1 -> FestivalsFragment()
-                else -> return MapFragment()
+                0 -> FestivalsFragment()
+                1 -> MapFragment()
+                else -> return FestivalsFragment()
             }
         }
 

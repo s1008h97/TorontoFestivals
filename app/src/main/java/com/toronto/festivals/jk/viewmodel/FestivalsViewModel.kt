@@ -3,19 +3,28 @@ package com.toronto.festivals.jk.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.toronto.festivals.jk.model.FestivalsModel
+import androidx.viewpager2.widget.ViewPager2
+import java.util.*
 
 
 class FestivalsViewModel : ViewModel() {
+    private var timer: Timer? = null
 
-    private val _liveData = MutableLiveData<String>()
-    val liveData: LiveData<String> = _liveData
-
-    init {
-        _liveData.value = "Hello World! Click text!"
+    fun startAutoScroll(viewPager: ViewPager2) {
+        timer = Timer()
+        timer?.schedule(object : TimerTask() {
+            override fun run() {
+                viewPager.post {
+                    val currentItem = viewPager.currentItem
+                    val newItem = (currentItem + 1) % 3
+                    viewPager.currentItem = newItem
+                }
+            }
+        }, 3000, 3000) // Adjust the delay and period as needed
     }
 
-    fun increment(text: String?) {
-        _liveData.value = text
+    fun stopAutoScroll() {
+        timer?.cancel()
+        timer = null
     }
 }
