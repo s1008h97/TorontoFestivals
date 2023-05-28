@@ -1,6 +1,7 @@
 package com.toronto.festivals.jk.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -9,8 +10,15 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.toronto.festivals.jk.R
+import com.toronto.festivals.jk.data.model.FestivalCalEventModel
+import com.toronto.festivals.jk.data.network.FestivalAPIService
 import com.toronto.festivals.jk.databinding.ActivityMainBinding
 import com.toronto.festivals.jk.util.OnSingleClickListener
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -25,6 +33,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        // ys - test code 
+        val retrofit = Retrofit.Builder().baseUrl("https://secure.toronto.ca/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+        val festivalService = retrofit.create(FestivalAPIService::class.java)
+
+        festivalService.getFestivalCalEventJson("edc_eventcal_APR")?.enqueue(object :
+            Callback<FestivalCalEventModel> {
+            override fun onResponse(
+                call: Call<FestivalCalEventModel>,
+                response: Response<FestivalCalEventModel>
+            ) {
+                if (response.isSuccessful) {
+                    // 정상적으로 통신이 성공된 경우
+                    var result: FestivalCalEventModel? = response.body()
+                    Log.d("Sun's TEST", "onResponse 성공: " + result?.toString());
+                } else {
+                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                    Log.d("Sun's TEST", "onResponse 실패")
+                }
+            }
+
+            override fun onFailure(call: Call<FestivalCalEventModel>, t: Throwable) {
+                Log.d("Sun's TEST", "onFailure Error: " + t.message.toString());
+            }
+        })
+
 
         setUpFragment()
     }
