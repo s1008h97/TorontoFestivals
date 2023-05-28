@@ -1,15 +1,13 @@
 package com.toronto.festivals.jk.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.viewpager2.widget.ViewPager2
 import java.util.*
 
-
 class FestivalsViewModel : ViewModel() {
     private var timer: Timer? = null
 
+    // Banner Auto Scroll
     fun startAutoScroll(viewPager: ViewPager2) {
         timer = Timer()
         timer?.schedule(object : TimerTask() {

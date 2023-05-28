@@ -36,7 +36,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_map, container, false)
         mapViewModel = ViewModelProvider(this).get(MapViewModel::class.java)
         binding.viewmodel = mapViewModel

@@ -14,11 +14,14 @@ import com.toronto.festivals.jk.data.model.FestivalCalEventModel
 import com.toronto.festivals.jk.data.network.FestivalAPIService
 import com.toronto.festivals.jk.databinding.ActivityMainBinding
 import com.toronto.festivals.jk.util.OnSingleClickListener
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -34,12 +37,17 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // ys - test code 
+        // ys - test code
+        val loggingInterceptor =
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val httpClientBuilder = OkHttpClient.Builder().addInterceptor(loggingInterceptor)
+
         val retrofit = Retrofit.Builder().baseUrl("https://secure.toronto.ca/")
+            .client(httpClientBuilder.build())
             .addConverterFactory(GsonConverterFactory.create()).build()
         val festivalService = retrofit.create(FestivalAPIService::class.java)
 
-        festivalService.getFestivalCalEventJson("edc_eventcal_APR")?.enqueue(object :
+        festivalService.getFestivalCalEventJson("edc_eventcal_apr")?.enqueue(object :
             Callback<FestivalCalEventModel> {
             override fun onResponse(
                 call: Call<FestivalCalEventModel>,

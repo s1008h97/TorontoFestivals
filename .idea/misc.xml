@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.47685185185185186" />
+        <entry key="../../../../.gradle/caches/transforms-3/e6a4dec51b8413bc424f2300be655ce2/transformed/appcompat-1.2.0/res/layout/abc_action_bar_title_item.xml" value="0.23599828986746474" />
+        <entry key="../../../../.gradle/caches/transforms-3/e6a4dec51b8413bc424f2300be655ce2/transformed/appcompat-1.2.0/res/layout/abc_activity_chooser_view_list_item.xml" value="0.23599828986746474" />
+        <entry key="../../../../.gradle/caches/transforms-3/e6a4dec51b8413bc424f2300be655ce2/transformed/appcompat-1.2.0/res/layout/abc_list_menu_item_layout.xml" value="0.23599828986746474" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_festivals.xml" value="0.4296875" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.375" />

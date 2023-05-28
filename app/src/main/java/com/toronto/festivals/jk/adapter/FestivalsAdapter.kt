@@ -1,10 +1,8 @@
 package com.toronto.festivals.jk.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.toronto.festivals.jk.R
 import com.toronto.festivals.jk.databinding.ItemFestivalBinding
 import com.toronto.festivals.jk.data.model.FestivalsModel
 
@@ -14,7 +12,7 @@ class FestivalsAdapter(val festivalsModel: ArrayList<FestivalsModel>) :
     class FestivalViewHolder(view: ItemFestivalBinding) : RecyclerView.ViewHolder(view.root) {
         val textTitle = view.textTitle
         fun bind(festivalItem: FestivalsModel) {
-            textTitle.text = festivalItem.title.toString()
+            textTitle.text = festivalItem.title.get()
         }
     }
 
