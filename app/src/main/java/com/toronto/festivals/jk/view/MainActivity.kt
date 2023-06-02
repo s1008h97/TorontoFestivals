@@ -47,15 +47,15 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create()).build()
         val festivalService = retrofit.create(FestivalAPIService::class.java)
 
-        festivalService.getFestivalCalEventJson("edc_eventcal_apr")?.enqueue(object :
-            Callback<FestivalCalEventModel> {
+        festivalService.getFestivalCalEventJson("edc_eventcal_APR").enqueue(object :
+            Callback<List<FestivalCalEventModel>> {
             override fun onResponse(
-                call: Call<FestivalCalEventModel>,
-                response: Response<FestivalCalEventModel>
+                call: Call<List<FestivalCalEventModel>>,
+                response: Response<List<FestivalCalEventModel>>
             ) {
                 if (response.isSuccessful) {
                     // 정상적으로 통신이 성공된 경우
-                    var result: FestivalCalEventModel? = response.body()
+                    var result: List<FestivalCalEventModel>? = response.body()
                     Log.d("Sun's TEST", "onResponse 성공: " + result?.toString());
                 } else {
                     // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<FestivalCalEventModel>, t: Throwable) {
+            override fun onFailure(call: Call<List<FestivalCalEventModel>>, t: Throwable) {
                 Log.d("Sun's TEST", "onFailure Error: " + t.message.toString());
             }
         })

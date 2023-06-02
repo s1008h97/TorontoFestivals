@@ -10,5 +10,5 @@ interface FestivalAPIService {
     @GET("cc_sr_v1/data/{path}")
     fun getFestivalCalEventJson(
         @Path("path") path : String
-    ):Call<FestivalCalEventModel>
+    ):Call<List<FestivalCalEventModel>>
 }

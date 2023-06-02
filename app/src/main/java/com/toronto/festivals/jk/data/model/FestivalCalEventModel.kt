@@ -7,12 +7,12 @@ import com.google.gson.annotations.SerializedName
 //Json을 사용할 경우 @SerializedName("속성명")을 사용하는데 속성명만 데이터와 맞춰주면 변수명은 마음대로 해도 상관 없음
 //나는 변수명하고 속성명 맞춰줌
 
-data class FestivalCalEventModel(
+/*data class FestivalCalEventModel(
 
     @SerializedName("calEvent")
-    var calEvent : List<FestivalsInfoModel> //calEvent라는 데이터 안에 여러가지 데이터가 있기떄문에 먼저 데이터 형태를 List로 불러와줌
-)
-data class FestivalsInfoModel(
+    var calEvent : FestivalsInfoModel//calEvent라는 데이터 안에 여러가지 데이터가 있기떄문에 먼저 데이터 형태를 List로 불러와줌
+)*/
+data class FestivalCalEventModel(
 
     @SerializedName("eventName")
     var eventName: String,  //행사 이름
